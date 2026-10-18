@@ -1,0 +1,15 @@
+
+# Routes
+
+# Trang chu
+GET     /                           controllers.HomeController.index()
+
+# Static resources
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# Product Management API
+GET     /products                   controllers.ProductController.getAll(request: Request)
+GET     /products/:id               controllers.ProductController.getById(request: Request, id: Int)
+POST    /products                   controllers.ProductController.create(request: Request)
+PUT     /products/:id               controllers.ProductController.update(request: Request, id: Int)
+DELETE  /products/:id               controllers.ProductController.delete(request: Request, id: Int)
